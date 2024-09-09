@@ -4,6 +4,9 @@ interface countryData {
   population: number;
 }
 
+function numberWithCommas(x: number) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 const searchCountry = () => {
   let countrySelect = document.getElementById("country") as HTMLSelectElement;
   let value = countrySelect.value;
@@ -12,6 +15,7 @@ const searchCountry = () => {
   const capitalElement = result!.querySelector(".capital");
   const populationElement = result!.querySelector(".population");
   const flagElement = result!.querySelector(".flag");
+  const name = result!.querySelector(".name");
   status!.textContent = `Searching.... ${value}`;
   capitalElement!.textContent = "";
   populationElement!.textContent = "";
@@ -28,9 +32,12 @@ const searchCountry = () => {
       };
       const flag = country[0].flags.png;
       const flagImg = ` <img src="${flag}" alt="Flag of ${countrySource.name}" width="100">`;
-      status!.textContent = `Found: ${countrySource.name}`;
-      capitalElement!.textContent = `Capital: ${countrySource.capital}`;
-      populationElement!.textContent = `Population: ${countrySource.population}`;
+      status!.textContent = `Found: ${countrySource.name}.`;
+      name!.textContent = `Name: ${countrySource.name}.`;
+      capitalElement!.textContent = `Capital: ${countrySource.capital}.`;
+      populationElement!.textContent = `Population: ${numberWithCommas(
+        countrySource.population
+      )}`;
       flagElement!.innerHTML = `Flag: ${flagImg}`;
     })
     .catch((err) => {

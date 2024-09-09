@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=SUSE:wght@100..800&display=swap");
+
+body {
+  background-color: cadetblue;
+}
+h1 {
+  text-align: center;
+  padding-top: 10px;
+
+  font-family: "Oswald", sans-serif;
+  font-size: 60px;
+  background-image: linear-gradient(
+    to right,
+    #eea2a2 0%,
+    #bbc1bf 19%,
+    #57c6e1 42%,
+    #b49fda 79%,
+    #7ac5d8 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+#country {
+  margin-left: 450px;
+  margin-top: 80px;
+  width: 350px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  padding: 0 15px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "SUSE", sans-serif;
+  background-color: mintcream;
+  option {
+    background-color: burlywood;
+    color: white;
+  }
+}
+#btn {
+  width: 150px;
+  height: 50px;
+  margin-left: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "SUSE", sans-serif;
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  &:hover {
+    background: linear-gradient(
+      90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%
+    );
+  }
+}
+.result {
+  width: 500px;
+  margin-left: 33%;
+  transition: all linear 0.5s;
+  p {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    font-family: "Oswald", sans-serif;
+    border-bottom: 1px solid;
+    transition: all linear 0.5s;
+  }
+  img {
+    padding-left: 15px;
+  }
+}
